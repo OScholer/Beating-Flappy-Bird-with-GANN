@@ -292,8 +292,9 @@ class Ball:
     def net_update(self,input):
         #net_update calls the foreward function of the neuronal net and makes an
         #action depending on the input
+        #Change v = 40 for level 2 and 3
         if self.net(input)<0.5:
-            self.v -= 40
+            self.v -= 8
 
     def get_parameters(self):
         #this function can be used to transfer Ball states to a drawing tool
@@ -307,6 +308,7 @@ class Ball:
     def enclose(self):
         #pass
         #Ball cannot escape window to the top and will bounce off
+        #delete this line for level 3
         if self.y>300:
             self.y = 300
             self.v = 8
