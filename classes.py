@@ -514,3 +514,13 @@ class method():
             self.last_gen.append(torch.load(self.name+"/TorchSaves/Last_Gen"+str(i)+".pt"))
 
         #self.best_ball = self.last_gen[-1]
+        
+class method_short():
+    def __init__(self, name):
+        print(name)
+        self.name = name
+        self.scores, self.best_scores, self.mean_scores, self.std_scores = functions.load_data(self.name) 
+        self.N_population = 2
+        self.last_gen = []
+        for i in range(self.N_population):
+            self.last_gen.append(torch.load(self.name+"/TorchSaves/Last_Gen"+str(998+i)+".pt"))
